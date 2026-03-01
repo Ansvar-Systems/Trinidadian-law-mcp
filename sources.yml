@@ -1,0 +1,28 @@
+# sources.yml
+schema_version: "1.0"
+mcp_name: "Trinidad and Tobago Law MCP"
+jurisdiction: "TT"
+
+sources:
+  - name: "Digital Legislative Library of Trinidad and Tobago"
+    authority: "Government of Trinidad and Tobago"
+    official_portal: "https://laws.gov.tt"
+    canonical_identifier: "tt-law"
+    retrieval_method: "HTML scraping + PDF download"
+    api_documentation: "N/A"
+    update_frequency: "As laws are enacted"
+    last_ingested: "pending"
+    license_or_terms:
+      type: "Government Publication"
+      url: "https://laws.gov.tt"
+      summary: "Official government legal database; legislation is public domain as government publication"
+    coverage:
+      scope: "Revised Laws of Trinidad and Tobago, updated to December 31st 2016"
+      limitations: "Portal covers laws from 1838 to 2025, primarily the 2006 Revised Edition"
+    languages:
+      - "en"
+
+data_freshness:
+  automated_checks: false
+  check_frequency: "monthly"
+  last_verified: "pending"
