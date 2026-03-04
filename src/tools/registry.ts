@@ -83,6 +83,7 @@ export const TOOLS: Tool[] = [
       'Retrieve the full text of a specific provision (section) from a Trinidad and Tobago statute. ' +
       'Specify a document_id and optionally a section or provision_ref. ' +
       'Omit section/provision_ref to get ALL provisions in the statute (use sparingly -- can be large). ' +
+      'Subsection references like "13(1)" or "s29(2)(a)" resolve to the parent section. ' +
       'Returns provision text, chapter, section number, and metadata. ' +
       'Use this when you know WHICH provision you want. For discovery, use search_legislation instead.',
     inputSchema: {
@@ -233,7 +234,7 @@ export function registerTools(
           result = await buildLegalStance(db, args as unknown as BuildLegalStanceInput);
           break;
         case 'format_citation':
-          result = await formatCitationTool(args as unknown as FormatCitationInput);
+          result = await formatCitationTool(db, args as unknown as FormatCitationInput);
           break;
         case 'check_currency':
           result = await checkCurrency(db, args as unknown as CheckCurrencyInput);
